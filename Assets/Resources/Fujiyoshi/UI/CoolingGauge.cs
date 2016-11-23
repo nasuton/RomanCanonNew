@@ -12,9 +12,9 @@ public class CoolingGauge : MonoBehaviour
 
     //冷却
     private float type_cool;
-    //反射可能時間
+    //発射可能時間
     private float type_fire_count;
-    //反射可能時間
+    //連射速度
     private float type_rate;
     public int a;
     public void Default()
