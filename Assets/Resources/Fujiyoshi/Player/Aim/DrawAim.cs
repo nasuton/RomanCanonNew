@@ -33,19 +33,6 @@ public class DrawAim : MonoBehaviour
     void Update()
     {
         Vector3[] pos = new Vector3[2];
-        //if (GameObject.Find("RomanBar").GetComponent<RomanGauge>().roman_mode == false)
-        //{
-            
-        //}
-        //else if (GameObject.Find("RomanBar").GetComponent<RomanGauge>().roman_mode == true &&
-        //    romanModeManager.GetComponent<RomanModeManager>().roman_type == WeaponStatusManager.RomanType.BurstType.tactical)
-        //{
-        //    if (GameObject.Find("LMHeadMountedRig").GetComponent<RomanModeManager>().NearEnemy == null)
-        //    {
-        //        return;
-        //    }
-        //    pos[0] = romanModeManager.GetComponent<RomanModeManager>().NearEnemy.transform.position;
-        //}
         pos[0] = weapon_aim.transform.position;
         pos[1] = R_hand.transform.position;
         aim_direction = pos[0] - pos[1];

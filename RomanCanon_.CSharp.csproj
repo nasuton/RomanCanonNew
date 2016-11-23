@@ -143,9 +143,10 @@
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Aim\CreateAim.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Aim\DrawAim.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\Attack.cs" />
-    <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\BulletOfMiniGun.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\BulletOfRailGun.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\BulletOfRocketLuncher.cs" />
+    <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\MiniGun\BulletOfMiniGun.cs" />
+    <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\MiniGun\MiniGunExprode.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Bullet\VectorMover.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Weapon\GunManager\DefaultGunController.cs" />
     <Compile Include="Assets\Resources\Fujiyoshi\Player\Weapon\GunManager\GunManager.cs" />
