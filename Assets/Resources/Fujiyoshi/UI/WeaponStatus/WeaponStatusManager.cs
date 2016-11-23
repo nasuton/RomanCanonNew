@@ -25,7 +25,8 @@ public class WeaponStatusManager : MonoBehaviour {
             rocket = 0,
             normal = 1,
             burst = 2,
-            tactical = 3
+            tactical = 3,
+            bb = 0
         }
         public BurstType brust;
         public int num;
@@ -51,8 +52,6 @@ public class WeaponStatusManager : MonoBehaviour {
             roman_status[i] = WeaponType.GetComponent<RomanPartsStauts>().Status[i];
             debuf_status[i] = WeaponType.GetComponent<DownPartsStatus>().Status[i];
         }
-            
-        
     }
 
     void Awake()
@@ -61,7 +60,6 @@ public class WeaponStatusManager : MonoBehaviour {
         statusInit();
     }
 
-    public int a;
     void statusChange()
     {
         //通常時
