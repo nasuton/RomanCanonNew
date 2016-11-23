@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class spawner_cs : MonoBehaviour {
     //エネミーの種類
@@ -30,6 +31,14 @@ public class spawner_cs : MonoBehaviour {
     //プレイヤーする位置
     public Vector3 playerPos;
 
+    Dictionary<int, int> enemy_type = new Dictionary<int, int>()
+            {
+                { 0, 40},
+                { 1, 25},
+                { 2, 20},
+                { 3, 15}
+            };
+
     void Awake()
     {
         boss_spawn = false;
@@ -48,7 +57,7 @@ public class spawner_cs : MonoBehaviour {
 
             spawn_pos[i] = new Vector3(x1, 0.0f, z1);
 
-            float rotary_axis = 180 + i;
+            float rotary_axis = 270 - i;
 
             angle[i] = rotary_axis;
         }
@@ -60,16 +69,19 @@ public class spawner_cs : MonoBehaviour {
     {
         while (0.0f < GameObject.Find("Timer").GetComponent<timer>().countTimer)
         {
+            int type = probability.enemy_election(enemy_type);
+            //Debug.Log(type);
+
             int count = Random.Range(0, spawn_pos.Length - 1);
 
             if (GameObject.Find("Timer").GetComponent<timer>().countTimer <= 30.0f && !boss_spawn)
             {
-                GameObject.Instantiate(enemy[4], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
+                Instantiate(enemy[4], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
                 boss_spawn = true;
             }
             else
             {
-                GameObject.Instantiate(enemy[Random.Range(0, enemy.Length - 1)], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
+                Instantiate(enemy[type], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
             }
 
             yield return new WaitForSeconds(time);

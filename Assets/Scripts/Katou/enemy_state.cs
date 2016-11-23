@@ -71,4 +71,9 @@ public class enemy_state : MonoBehaviour
         hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+
+    }
+
 }
