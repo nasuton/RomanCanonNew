@@ -59,6 +59,9 @@ public class GunManager : MonoBehaviour
 
     [SerializeField]
     GameObject AimDirection = null;
+
+    
+
     void Start()
     {
         var type = GameObject.Find("WeaponType");
@@ -102,10 +105,17 @@ public class GunManager : MonoBehaviour
             obj.transform.localPosition = new Vector3(0, 2, -2);
         }
     }
-
-    void Update()
+    void gunTransform()
     {
         obj.transform.forward = AimDirection.GetComponent<DrawAim>().aim_direction * 3;
+        if (weaponType == (int)WeaponType.MINI_GUN)
+        {
+           
+        }
+    }
+    void Update()
+    {
+        gunTransform();
         transform.position = WeaponAim.transform.position;
         transform.LookAt(WeaponAim.transform.position);
     }
