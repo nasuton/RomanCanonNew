@@ -10,11 +10,6 @@ public class DefaultGunController : MonoBehaviour
     protected float speed = 100000000;
 
     [SerializeField, Tooltip("1発撃った後の待機時間")]
-    protected float waitTimeOfShot = 0.05f;
-
-   protected void setWaitTimeOfShot(float defalutValue, float maxValue)
-    {
-        waitTimeOfShot = ( 1.0f - GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[1] / maxValue) * defalutValue;
-    }
+    public float waitTimeOfShot = 1;
 
 }

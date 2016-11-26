@@ -19,10 +19,9 @@ public class ChangePosition : MonoBehaviour {
         {
             this.transform.localPosition = new Vector3(-1, 0, 0);
         }
-
-        else if (weaponType == (int)WeaponType.RAIL_GUN)
+        else if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
         {
-            //
+            this.transform.localPosition = new Vector3(0, 0, 1.48f);
         }
 
     }

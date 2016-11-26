@@ -17,7 +17,6 @@ public class MiniGunController : DefaultGunController
 
     void Start()
     {
-        setWaitTimeOfShot(defaultWaitTimeOfShot,maxWaitTimeOfShot);
         StartCoroutine(Shot());
 
     }
