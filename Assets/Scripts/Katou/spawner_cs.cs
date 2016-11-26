@@ -33,10 +33,10 @@ public class spawner_cs : MonoBehaviour {
 
     Dictionary<int, int> enemy_type = new Dictionary<int, int>()
             {
-                { 0, 40},
-                { 1, 25},
-                { 2, 20},
-                { 3, 15}
+                { 0, 40},           //ノーマル
+                { 1, 25},           //スピード
+                { 2, 20},           //ヘビー
+                { 3, 15}            //ジャンプ
             };
 
     void Awake()
