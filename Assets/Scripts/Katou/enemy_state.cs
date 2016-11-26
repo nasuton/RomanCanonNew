@@ -11,6 +11,8 @@ public class enemy_state : MonoBehaviour
 
     private int hp = 10;
 
+    private float speed;
+
     public GameObject effect;
 
     bool isInvincible = false;
@@ -69,6 +71,7 @@ public class enemy_state : MonoBehaviour
 
         isInvincible = true;
         hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
+        
     }
 
     void OnTriggerStay(Collider other)

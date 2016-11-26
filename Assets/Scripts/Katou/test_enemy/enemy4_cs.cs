@@ -3,7 +3,6 @@ using System.Collections;
 
 public class enemy4_cs : MonoBehaviour
 {
-
     Vector3 target;
 
     bool jumpflug;

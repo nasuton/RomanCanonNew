@@ -23,7 +23,8 @@ public class enemy_cs : MonoBehaviour
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;
-        angleDir = transform.localEulerAngles.y + 90.0f;
+        angleDir = transform.localEulerAngles.y - 90.0f;
+        //Debug.Log(angleDir);
     }
 
     void Update()
