@@ -28,6 +28,7 @@ public class speed_enemy : MonoBehaviour
     void Start ()
     {
         target = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
+        angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
         nexttarget = false;

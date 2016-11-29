@@ -408,6 +408,24 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010997949944, guid: 7b97c60871673f441820bc731b9b95eb,
+        type: 2}
+      propertyPath: enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000013716865216, guid: 5485f3cac4c773a41a93dc4ce4e9ea0f,
+        type: 2}
+    - target: {fileID: 114000010997949944, guid: 7b97c60871673f441820bc731b9b95eb,
+        type: 2}
+      propertyPath: enemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000012787233108, guid: 01e282e46be476548a1407e90852c3a0,
+        type: 2}
+    - target: {fileID: 114000010997949944, guid: 7b97c60871673f441820bc731b9b95eb,
+        type: 2}
+      propertyPath: enemy.Array.data[3]
+      value: 
+      objectReference: {fileID: 1000010389931520, guid: 1f3ce7978d179f9478f8a3849a43f416,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b97c60871673f441820bc731b9b95eb, type: 2}
   m_IsPrefabParent: 0
@@ -420,7 +438,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: b807e0ed08a8df04aa75957e93b5983e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.1
+      value: 16.97
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b807e0ed08a8df04aa75957e93b5983e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -601,7 +619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  angle: 90
 --- !u!54 &2085429131
 Rigidbody:
   m_ObjectHideFlags: 0

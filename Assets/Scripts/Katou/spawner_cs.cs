@@ -16,7 +16,6 @@ public class spawner_cs : MonoBehaviour {
     private float radius = 100.0f;
 
     //最大でスポーンする位置数
-    [SerializeField, Tooltip("リスポーンする位置の最大数です")]
     private int max_spawn = 200;
 
     //リスポーンする位置
@@ -31,6 +30,10 @@ public class spawner_cs : MonoBehaviour {
     //プレイヤーする位置
     public Vector3 playerPos;
 
+    private float[] inversion_Dir;
+
+    public float inversion;
+
     Dictionary<int, int> enemy_type = new Dictionary<int, int>()
             {
                 { 0, 40},           //ノーマル
@@ -44,6 +47,7 @@ public class spawner_cs : MonoBehaviour {
         boss_spawn = false;
         spawn_pos = new Vector3[max_spawn];
         angle = new float[max_spawn];
+        inversion_Dir = new float[max_spawn];
     }
     
     void Start()
@@ -57,9 +61,9 @@ public class spawner_cs : MonoBehaviour {
 
             spawn_pos[i] = new Vector3(x1, 0.0f, z1);
 
-            float rotary_axis = 270 - i;
+            angle[i] = 270 - i;
 
-            angle[i] = rotary_axis;
+            inversion_Dir[i] = 180 + i;
         }
 
         StartCoroutine("Spawn", interval);
@@ -70,9 +74,10 @@ public class spawner_cs : MonoBehaviour {
         while (0.0f < GameObject.Find("Timer").GetComponent<timer>().countTimer)
         {
             int type = probability.enemy_election(enemy_type);
-            //Debug.Log(type);
 
             int count = Random.Range(0, spawn_pos.Length - 1);
+
+            inversion = inversion_Dir[count];
 
             if (GameObject.Find("Timer").GetComponent<timer>().countTimer <= 30.0f && !boss_spawn)
             {
