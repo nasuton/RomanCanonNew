@@ -14,12 +14,10 @@ public class RocketLauncherController : DefaultGunController
         Vector3 force;
         force = transform.forward * speed * (100 - GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[4]);
         obj.GetComponent<VectorMover>().MoveVec = force;
-        obj.transform.position = transform.position + transform.forward * 7;
+        obj.transform.position = transform.position + transform.forward * 10;
     }
 
-
-
-
+    
     private IEnumerator Shot()
     {
         while (true)

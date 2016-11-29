@@ -11,6 +11,33 @@ public class plam_pos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.position = plam.transform.position;
+        if (GameObject.Find("LMHeadMountedRig").GetComponent<OtherController>().OtherEnter == true)
+        {
+            this.transform.position = plam.transform.position;
+        }
+        else
+        {
+            if (Input.GetKey("w"))
+            {
+                this.transform.localPosition += new Vector3(0, 0, 0.01f);
+            }
+
+
+            if (Input.GetKey("s"))
+            {
+                this.transform.localPosition += new Vector3(0, 0, -0.01f);
+            }
+
+
+            if (Input.GetKey("a"))
+            {
+                this.transform.localPosition += new Vector3(0.01f, 0, 0);
+            }
+
+            if (Input.GetKey("d"))
+            {
+                this.transform.localPosition += new Vector3(-0.01f, 0, 0);
+            }
+        }
 	}
 }

@@ -25,16 +25,20 @@ public class MiniGunController : DefaultGunController
     {
         GameObject obj = (GameObject)Instantiate(bullet, new Vector3(0, 0, 0), Quaternion.identity);
         Vector3 force;
-        
-        
+
+        float x = (float)(Random.value - 0.5f)*10;
+        float y = (float)(Random.value - 0.5f)*10;
         obj.transform.position = transform.position + transform.forward * 0.5f;
-        force = 1000 * transform.forward * speed;
+        force = 1000 * transform.forward * speed + new Vector3(x, 0, y);
+        
+        
+        
         if (GameObject.Find("RomanBar").GetComponent<RomanGauge>().roman_mode == true &&
             GameObject.Find("LMHeadMountedRig").GetComponent<RomanModeManager>().roman_type == WeaponStatusManager.RomanType.BurstType.tactical)
         {
             if (GameObject.Find("LMHeadMountedRig").GetComponent<RomanModeManager>().NearEnemy == null)
-            {
-                force = 1000 * transform.forward * speed;
+           { 
+                force = 1000 * transform.forward * speed + new Vector3(x,0,y);
             }
             else if(GameObject.Find("LMHeadMountedRig").GetComponent<RomanModeManager>().NearEnemy != null)
             {
@@ -45,9 +49,7 @@ public class MiniGunController : DefaultGunController
         }
 
         obj.GetComponent<VectorMover>().MoveVec = force;
-
-
-
+        
     }
     
     private void isBurst()
@@ -74,8 +76,10 @@ public class MiniGunController : DefaultGunController
         {
             if (Input.GetMouseButton(0) && friezeGauge.GetComponent<CoolingGauge>().canShot == true)
             {
+                GameObject.Find("WeaponAim").GetComponent<ChangePosition>().Scatter();
                 MakeBullet();
                 isBurst();
+                GameObject.Find("WeaponAim").GetComponent<ChangePosition>().Reset();
                 yield return new WaitForSeconds(friezeGauge.GetComponent<CoolingGauge>().rate);
             }
             else
