@@ -29,12 +29,12 @@ public class normal_enemy : MonoBehaviour
     void Start ()
     {
         target = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
+        angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;
-        angleDir = transform.localEulerAngles.y - 90.0f;
     }
 	
 	void Update ()
