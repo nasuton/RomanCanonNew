@@ -28,14 +28,16 @@ public class BulletOfRailGun : MonoBehaviour
 
     private void Move()
     {
-        transform.localPosition += new Vector3(0,0, moveVec.z * Time.deltaTime);
-        transform.localScale += new Vector3(0, 0, moveVec.z * Time.deltaTime * 2.0f);
+        
     }
 
     public void Reset()
     {
-        transform.localPosition = new Vector3(0, 0, 0.7f);
-        transform.localScale = new Vector3(1.5f,1.5f,0.5f);
+        transform.localPosition = new Vector3(0,0, GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[2]);
+        transform.localScale = new Vector3(
+            GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[4],
+            GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[2],
+            GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[4]);
     }
 
 

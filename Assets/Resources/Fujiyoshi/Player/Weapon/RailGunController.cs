@@ -16,22 +16,20 @@ public class RailGunController : MonoBehaviour
 
     private bool isShoted = false;
 
-    private float chargePower = 0.0f;
+    public float chargePower = 0.0f;
 
-    [SerializeField, Tooltip("Chargeを貯める速度")]
-    private float chargeSpeed = 0.5f;
+    private float charge_default_time = 3;
+
+    private float burst_default_time = 5;
+
+    private float charge_max = 100;
 
     public float ChargePower
     {
         get { return chargePower; }
     }
 
-    enum ChargeCount
-    {
-        MAX = 100,
-        MIN = 0
-    }
-
+    
     void Start()
     {
         isCharge = false;
@@ -57,13 +55,13 @@ public class RailGunController : MonoBehaviour
     {
         if (isShoted == true) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             if (isCharge == false)
                 isCharge = true;
         }
 
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetMouseButtonUp(0))
         {
             if (isCharge == true)
             {
@@ -79,13 +77,13 @@ public class RailGunController : MonoBehaviour
     private void Charge()
     {
         if (isCharge == false) return;
-
-        chargePower += chargeSpeed * Time.deltaTime;
+        
+        chargePower +=  100 * (1/(charge_default_time +(GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[1] / 60))) * Time.deltaTime;
 
         Debug.Log(chargePower);
 
-        if (chargePower > (float)ChargeCount.MAX)
-            chargePower = (float)ChargeCount.MAX;
+        if (chargePower > charge_max)
+            chargePower = charge_max;
     }
 
 
@@ -93,11 +91,11 @@ public class RailGunController : MonoBehaviour
     {
         if (isShoted == false) return;
 
-        chargePower -= chargeSpeed * Time.deltaTime;
+        chargePower -= 100 * (1 / (burst_default_time + (GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[3] / 60))) * Time.deltaTime;
 
-        if (chargePower < (float)ChargeCount.MIN)
+        if (chargePower < 0)
         {
-            chargePower = (float)ChargeCount.MIN;
+            chargePower = 0;
             isShoted = false;
             bullet.SetActive(false);
         }

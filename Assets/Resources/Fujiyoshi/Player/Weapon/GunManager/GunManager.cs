@@ -89,7 +89,6 @@ public class GunManager : MonoBehaviour
     void MakeWeapon()
     {
         //var type = GameObject.Find("WeaponType");
-
         
         obj = (GameObject)Instantiate(weapon[weaponType],
                            new Vector3(0, 0, 0), Quaternion.identity);
@@ -104,14 +103,14 @@ public class GunManager : MonoBehaviour
         {
             obj.transform.localPosition = new Vector3(0, 2, -2);
         }
+        if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
+        {
+            obj.transform.localPosition = new Vector3(-1.37f, -1.03f, -3.7f);
+        }
     }
     void gunTransform()
     {
         obj.transform.forward = AimDirection.GetComponent<DrawAim>().aim_direction * 3;
-        if (weaponType == (int)WeaponType.MINI_GUN)
-        {
-           
-        }
     }
     void Update()
     {

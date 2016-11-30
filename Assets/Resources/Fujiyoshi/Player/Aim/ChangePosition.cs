@@ -11,6 +11,7 @@ public class ChangePosition : MonoBehaviour {
         ROCKET_LAUNCHER,
         RAIL_GUN
     }
+    private Vector2 my_scatter;
     public int weaponType = 0;
     void Start () {
 	    var type = GameObject.Find("WeaponType");
@@ -19,16 +20,27 @@ public class ChangePosition : MonoBehaviour {
         {
             this.transform.localPosition = new Vector3(-1, 0, 0);
         }
-
-        else if (weaponType == (int)WeaponType.RAIL_GUN)
+        else if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
         {
-            //
+            this.transform.localPosition = new Vector3(0, 0, 1.48f);
         }
-
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public void Scatter()
+    {
+        //float x = (float)(Random.value-0.5f) * 10;
+        //float y = (float)(Random.value - 0.5f) * 10;
+        //this.transform. += new Vector3(x,0,y);
+    }
+    public void Reset()
+    {
+        if (weaponType == (int)WeaponType.MINI_GUN)
+        {
+            this.transform.localPosition = new Vector3(-1, 0, 0);
+        }
+        else if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
+        {
+            this.transform.localPosition = new Vector3(0, 0, 1.48f);
+        }
+    }
+    
 }
