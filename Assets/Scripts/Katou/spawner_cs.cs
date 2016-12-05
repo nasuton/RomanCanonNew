@@ -70,8 +70,8 @@ public class spawner_cs : MonoBehaviour {
     }
 
     IEnumerator Spawn(float time)
-    {
-        while (0.0f < GameObject.Find("Timer").GetComponent<timer>().countTimer)
+    { 
+        while (GameObject.Find("gamemanager").GetComponent<gameman>().end == false)
         {
             int type = probability.enemy_election(enemy_type);
 

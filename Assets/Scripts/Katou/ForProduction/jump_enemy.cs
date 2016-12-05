@@ -44,6 +44,7 @@ public class jump_enemy : MonoBehaviour
 	void FixedUpdate()
     {
         if (state.isDed) return;
+        if (state.get_together) return;
 
         Move();
     }
