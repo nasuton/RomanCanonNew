@@ -4,8 +4,6 @@ using System.Collections;
 public class WeaponStatusManager : MonoBehaviour {
     [SerializeField]
     GameObject romanGauge;
-    [SerializeField]
-    GameObject WeaponType;
 
     public float[] status = new float[5];
 
@@ -48,9 +46,9 @@ public class WeaponStatusManager : MonoBehaviour {
     {
         for (int i = 0; i < status.Length; i++)
         {
-            status[i] = WeaponType.GetComponent<NormalPartsStatus>().Status[i];
-            roman_status[i] = WeaponType.GetComponent<RomanPartsStauts>().Status[i];
-            debuf_status[i] = WeaponType.GetComponent<DownPartsStatus>().Status[i];
+            status[i] = GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[i];
+            roman_status[i] = GameObject.Find("WeaponType").GetComponent<RomanPartsStauts>().Status[i];
+            debuf_status[i] = GameObject.Find("WeaponType").GetComponent<DownPartsStatus>().Status[i];
         }
     }
 
@@ -68,7 +66,7 @@ public class WeaponStatusManager : MonoBehaviour {
         {
             for (int i = 0; i < status.Length; i++)
             {
-                status[i] = WeaponType.GetComponent<NormalPartsStatus>().Status[i];
+                status[i] = GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[i];
             }
         }
 
@@ -81,7 +79,7 @@ public class WeaponStatusManager : MonoBehaviour {
             
             for (int i = 0; i < status.Length; i++)
             {
-                status[i] = WeaponType.GetComponent<NormalPartsStatus>().Status[i] * roman_status[i];
+                status[i] = GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[i] * roman_status[i];
             }
             
         }
@@ -94,7 +92,7 @@ public class WeaponStatusManager : MonoBehaviour {
             
             for (int i = 0; i < status.Length; i++)
             {
-                status[i] = WeaponType.GetComponent<NormalPartsStatus>().Status[i] * debuf_status[i];
+                status[i] = GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[i] * debuf_status[i];
             }
         }
     }
