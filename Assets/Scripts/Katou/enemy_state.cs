@@ -9,9 +9,11 @@ public class enemy_state : MonoBehaviour
 {
     public bool isDed;
 
+    public bool get_together;
+
     private int hp = 10;
 
-    private float speed;
+    float time_de;
 
     public GameObject effect;
 
@@ -21,6 +23,8 @@ public class enemy_state : MonoBehaviour
 
     [SerializeField]
     float maxInvincibleTime = 1.0f;
+
+    gameman gamemain;
 
     public int Hp
     {
@@ -40,10 +44,16 @@ public class enemy_state : MonoBehaviour
     void Start()
     {
         isDed = false;
+        gamemain = GameObject.Find("gamemanager").GetComponent<gameman>();
     }
 
     void Update()
     {
+        if(gamemain.end == true)
+        {
+            Destroy(this.gameObject);
+        }
+
         if (isInvincible == true)
         {
             invincibleTime += Time.deltaTime;
@@ -53,6 +63,11 @@ public class enemy_state : MonoBehaviour
                 isInvincible = false;
                 invincibleTime = 0.0f;
             }
+        }
+
+        if (get_together)
+        {
+
         }
 
         if (hp > 0) return;
@@ -71,12 +86,28 @@ public class enemy_state : MonoBehaviour
 
         isInvincible = true;
         hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
-        
+
+        if (other.gameObject.GetComponent<Collect>() == null) return;
+
+        get_together = true;
+
+        //t = other.gameObject.GetComponent<Collect>().traget;
+
+        time_de = other.gameObject.GetComponent<Collect>().destroyTime;
+
+        StartCoroutine("change", time_de);
     }
 
     void OnTriggerStay(Collider other)
     {
 
+    }
+
+    IEnumerator change(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        get_together = false;
     }
 
 }

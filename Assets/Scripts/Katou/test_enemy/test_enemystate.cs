@@ -43,6 +43,7 @@ public class test_enemystate : MonoBehaviour
     IEnumerator change(float time)
     {
         yield return new WaitForSeconds(time);
+
         get_together = false;
     }
 }
