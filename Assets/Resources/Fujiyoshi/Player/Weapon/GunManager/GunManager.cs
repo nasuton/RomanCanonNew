@@ -107,6 +107,10 @@ public class GunManager : MonoBehaviour
         {
             obj.transform.localPosition = new Vector3(-1.37f, -1.03f, -3.7f);
         }
+        if (weaponType == (int)WeaponType.RAIL_GUN)
+        {
+            obj.transform.localPosition = new Vector3(-0.3f,-0.1f, -4.1f);
+        }
     }
     void gunTransform()
     {

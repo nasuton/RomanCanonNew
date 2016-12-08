@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : SingletonMono<SceneChanger>
 {
     //fadeさせるためのTexture
-    private Texture2D _fadeTexture;
+    public Texture2D _fadeTexture;
 
     //Alpha値
     private float _fadeAlpha = 0.0f;
@@ -25,10 +25,8 @@ public class SceneChanger : SingletonMono<SceneChanger>
 
         DontDestroyOnLoad(this.gameObject);
 
-        _fadeTexture = new Texture2D(32, 32, TextureFormat.RGB24, false);
-        _fadeTexture.ReadPixels(new Rect(0, 0, 32, 32), 0, 0, false);
-        _fadeTexture.SetPixel(0, 0, Color.white);
-        _fadeTexture.Apply();
+       
+        
     }
 
     public void OnGUI()

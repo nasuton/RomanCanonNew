@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using DG.Tweening;
 public class RotateTextController : MonoBehaviour
 {
     private string text;
@@ -14,11 +14,13 @@ public class RotateTextController : MonoBehaviour
     }
 
     //半径
-    public float radius = 100;
+    public float radius = 10;
     //回転させるための角度
     public float offsetAngle;
 
     private int point;
+
+    private float active_time = 0;
 
     void Start()
     {
@@ -36,6 +38,7 @@ public class RotateTextController : MonoBehaviour
     {
         Arrange();
         offsetAngle += 80.0f * Time.deltaTime;
+        sceneChange();
     }
 
     [SerializeField]
@@ -59,6 +62,8 @@ public class RotateTextController : MonoBehaviour
         {
             GameObject obj = GameObject.Instantiate(textObject, transform) as GameObject;
             obj.GetComponent<TextMesh>().text = str[i].ToString();
+            obj.transform.localScale = new Vector3(1,0,1);
+            obj.transform.DOScaleY(1, 1).SetEase(Ease.OutElastic);
             GameObject UI = GameObject.Instantiate(backUI, obj.transform) as GameObject;
             UI.transform.localPosition = new Vector3(0, -0.6f,0.5f);
         }
@@ -78,6 +83,15 @@ public class RotateTextController : MonoBehaviour
                 Mathf.Sin(currentAngle * Mathf.Deg2Rad)) * radius;
             child.LookAt(transform);
             child.Rotate(new Vector3(0, 180, 0));
+        }
+    }
+
+    void sceneChange()
+    {
+        active_time += Time.deltaTime;
+        if(active_time >= 10)
+        {
+            SceneChanger.Instance.LoadLevel("Title", 1.0f);
         }
     }
 }

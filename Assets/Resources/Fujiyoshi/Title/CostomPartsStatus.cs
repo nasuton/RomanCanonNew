@@ -67,29 +67,7 @@ public class CostomPartsStatus : MonoBehaviour {
 
 
 
-    public struct CostomParts
-    {
-        public string name;
-        public float[] status;
-        public string tips;
-    }
-    public Dictionary<string, CostomParts> parts = new Dictionary<string, CostomParts>();
-
-    void LoadStatus()
-    {
-
-    }
-    void Awake() {
-
-        float[] f = new float[5];
-        
-        CostomParts buf = new CostomParts();
-        buf.status = f;
-        buf.name = "パーツ";
-        buf.tips = "破壊";
-
-        parts.Add("パーツ", buf);
-    }
+    
 	
 	void Update () {
 	
