@@ -13,6 +13,9 @@ public class gameman : MonoBehaviour
     [SerializeField]
     private int playerHp = 500;
 
+    [SerializeField]
+    GameObject result;
+
     timer time;
 
     void Awake()
@@ -33,6 +36,7 @@ public class gameman : MonoBehaviour
     {
         gameover();
         clear();
+        instanceResult();
 	}
 
     void gameover()
@@ -51,5 +55,12 @@ public class gameman : MonoBehaviour
             win = true;
             end = true;
         } 
+    }
+    void instanceResult()
+    {
+        if(win == true)
+        {
+            result.SetActive(true);
+        }
     }
 }
