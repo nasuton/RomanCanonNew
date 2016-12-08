@@ -19,6 +19,9 @@ public class normal_enemy : MonoBehaviour
     private int maxhp = 100;
 
     [SerializeField]
+    private int maxattack;
+
+    [SerializeField]
     private float angle = 20.0f;
 
     float angleDir;
@@ -32,6 +35,7 @@ public class normal_enemy : MonoBehaviour
         angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
+        state.Attack = maxattack;
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;
