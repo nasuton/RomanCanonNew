@@ -9,9 +9,7 @@ public class SoundMaker : MonoBehaviour
 {
     void Start()
     {
-        Sound.LoadBgm("TitleBgm", "Title");
-        Sound.LoadSe("Ok","Ok");
-
-        Sound.PlayBgm("TitleBgm");
+        Sound.LoadSe("TitleBgm", "Title");
+        Sound.LoadSe("kasutamu_k", "kasutamu_k");
     }
 }
