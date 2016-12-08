@@ -13,6 +13,8 @@ public class enemy_state : MonoBehaviour
 
     private int hp = 10;
 
+    private int attack;
+
     float time_de;
 
     public GameObject effect;
@@ -30,6 +32,12 @@ public class enemy_state : MonoBehaviour
     {
         get { return hp; }
         set { hp = value; }
+    }
+
+    public int Attack
+    {
+        get { return attack; }
+        set { attack = value; }
     }
 
     [SerializeField]
@@ -51,7 +59,7 @@ public class enemy_state : MonoBehaviour
     {
         if(gamemain.end == true)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         if (isInvincible == true)

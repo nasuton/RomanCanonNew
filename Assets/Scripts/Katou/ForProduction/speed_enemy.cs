@@ -18,6 +18,9 @@ public class speed_enemy : MonoBehaviour
     private int maxhp = 75;
 
     [SerializeField]
+    private int maxattack;
+
+    [SerializeField]
     private float angle = 90.0f;
 
     float angleDir;
@@ -31,6 +34,7 @@ public class speed_enemy : MonoBehaviour
         angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
+        state.Attack = maxattack;
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;

@@ -16,6 +16,9 @@ public class jump_enemy : MonoBehaviour
     [SerializeField]
     private int maxhp = 25;
 
+    [SerializeField]
+    private int maxattack;
+
     bool jumpflug;
     bool execution;
 
@@ -34,6 +37,7 @@ public class jump_enemy : MonoBehaviour
 	    target = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
+        state.Attack = maxattack;
         jumpflug = false;
         execution = false;
         body = GetComponent<Rigidbody>();
