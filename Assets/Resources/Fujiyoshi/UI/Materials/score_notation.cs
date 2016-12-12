@@ -11,7 +11,7 @@ public class score_notation : MonoBehaviour {
 
 	void Start ()
     {
-        GetComponent<TextMesh>().text = "Score : " + Text.GetComponent<score>().ScoreValue.ToString();
+        GetComponent<TextMesh>().text = Text.GetComponent<score>().ScoreValue.ToString();
     }
 	
 	void Update ()
@@ -22,6 +22,6 @@ public class score_notation : MonoBehaviour {
     //スコアを追加する際に、呼べば表示も変わる
     public void Add_Score()
     {
-        GetComponent<TextMesh>().text = "Score : " + Text.GetComponent<score>().ScoreValue.ToString();
+        GetComponent<TextMesh>().text = Text.GetComponent<score>().ScoreValue.ToString();
     }
 }

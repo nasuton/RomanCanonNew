@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 1000011087574082, guid: 199b6c494bbcf404d9ffb8359f7db00c, type: 2}
-  sphereCollider: {fileID: 1000012583937734, guid: 45aea25fa8c47d44fb5ae6c5540ba433,
+  sphereCollider: {fileID: 1000013857894340, guid: 45aea25fa8c47d44fb5ae6c5540ba433,
     type: 2}

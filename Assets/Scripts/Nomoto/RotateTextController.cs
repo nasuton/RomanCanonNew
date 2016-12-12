@@ -28,8 +28,6 @@ public class RotateTextController : MonoBehaviour
 
         point = scoreManager.ScoreValue;
 
-        point += 1234567890;
-
         Make("The end of the competition!! SCORE " + point.ToString() + "!! ");
         radius = 10.0f;
     }

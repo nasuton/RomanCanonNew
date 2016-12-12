@@ -24,6 +24,7 @@ public class RocketLauncherController : DefaultGunController
         {
             if (Input.GetMouseButton(0))
             {
+                Sound.PlaySe("rokeran s");
                 MakeBullet();
 
                 yield return new WaitForSeconds(3 + (GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[1] / 10));

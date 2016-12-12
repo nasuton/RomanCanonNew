@@ -76,11 +76,17 @@ public class MiniGunController : DefaultGunController
         {
             if (Input.GetMouseButton(0) && friezeGauge.GetComponent<CoolingGauge>().canShot == true)
             {
+                Sound.PlaySe("minigan r");
                 GameObject.Find("WeaponAim").GetComponent<ChangePosition>().Scatter();
                 MakeBullet();
                 isBurst();
                 GameObject.Find("WeaponAim").GetComponent<ChangePosition>().Reset();
                 yield return new WaitForSeconds(friezeGauge.GetComponent<CoolingGauge>().rate);
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                Sound.PlaySe("minigan e");
+                friezeGauge.GetComponent<CoolingGauge>().Cooling();
             }
             else
             {

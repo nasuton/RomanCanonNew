@@ -15,6 +15,7 @@ public class BulletOfRocketLuncher : MonoBehaviour
     {
         GameObject.Instantiate(effect);
         GameObject.Instantiate(sphereCollider);
+        Sound.PlaySe("rokeran h");
         effect.transform.localPosition = other.transform.localPosition;
         sphereCollider.transform.localPosition = other.transform.localPosition;
         Destroy(this);

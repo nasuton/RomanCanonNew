@@ -96,6 +96,7 @@ public class GunManager : MonoBehaviour
         {
             obj.GetComponent<MiniGunController>().FriezeGauge = friezeBar;
         }
+        
         obj.transform.parent = GameObject.Find("WeaponAim").transform;
         obj.transform.localPosition = new Vector3(0, 0, 0);
         obj.transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -121,6 +122,11 @@ public class GunManager : MonoBehaviour
         gunTransform();
         transform.position = WeaponAim.transform.position;
         transform.LookAt(WeaponAim.transform.position);
+        if (weaponType == (int)WeaponType.RAIL_GUN)
+        {
+            ChargeBar.GetComponent<ChargeGauge>().charge_max = obj.GetComponent<RailGunController>().charge_max;
+            ChargeBar.GetComponent<ChargeGauge>().charge_count = obj.GetComponent<RailGunController>().chargePower;
+        }
     }
 
    
