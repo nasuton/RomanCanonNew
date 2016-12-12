@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class RomanGauge : MonoBehaviour {
     public float roman_value = 0.0f;
 
@@ -53,8 +53,7 @@ public class RomanGauge : MonoBehaviour {
     }
     void gaugeChange()
     {
-        this.transform.localScale = new Vector3(roman_value/roman_max,1,1);
-        this.transform.localPosition = new Vector3(3.83f-(roman_value / roman_max)*3.83f, 0, 0);
+        this.GetComponent<Image>().fillAmount =  roman_value/roman_max;
     }
 
     void changeCoolTime()

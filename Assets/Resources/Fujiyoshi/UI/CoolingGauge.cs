@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class CoolingGauge : MonoBehaviour
 {
 
@@ -23,6 +23,7 @@ public class CoolingGauge : MonoBehaviour
         fire_count++;
         if (type_fire_count <= (int)fire_count)
         {
+            Sound.PlaySe("minigan h");
             canShot = false;
         }
 
@@ -67,8 +68,7 @@ public class CoolingGauge : MonoBehaviour
 
     void ChangeSize()
     {
-        this.transform.localScale = new Vector3(fire_count / type_fire_count, 1, 1);
-        this.transform.localPosition = new Vector3(-3.72f - (fire_count / type_fire_count) * -3.72f, 0, 0);
+        this.GetComponent<Image>().fillAmount = fire_count / type_fire_count;
     }
     void Update()
     {

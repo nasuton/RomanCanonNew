@@ -6,6 +6,12 @@ public class RailGunController : MonoBehaviour
     [SerializeField]
     GameObject bullet = null;
 
+    [SerializeField]
+    GameObject effect1 = null;
+
+    [SerializeField]
+    GameObject effect2 = null;
+
     [SerializeField, Tooltip("BulletSpeed")]
     private float speed = 100.0f;
 
@@ -22,7 +28,7 @@ public class RailGunController : MonoBehaviour
 
     private float burst_default_time = 5;
 
-    private float charge_max = 100;
+    public float charge_max = 100;
 
     public float ChargePower
     {
@@ -35,6 +41,8 @@ public class RailGunController : MonoBehaviour
         isCharge = false;
         isShoted = false;
         bullet.SetActive(false);
+        effect1.SetActive(false);
+        effect2.SetActive(false);
     }
 
     private void MakeBullet()
@@ -59,12 +67,19 @@ public class RailGunController : MonoBehaviour
         {
             if (isCharge == false)
                 isCharge = true;
+            Sound.PlayBgm("tilya-zi t");
+            
         }
 
         else if (Input.GetMouseButtonUp(0))
         {
             if (isCharge == true)
             {
+
+                effect1.SetActive(true);
+                effect2.SetActive(true);
+                Sound.StopBgm();
+                Sound.PlayBgm("tilya-zi s");
                 isCharge = false;
                 isShoted = true;
                 bullet.GetComponent<BulletOfRailGun>().Reset();
@@ -95,9 +110,12 @@ public class RailGunController : MonoBehaviour
 
         if (chargePower < 0)
         {
+            Sound.StopBgm();
             chargePower = 0;
             isShoted = false;
             bullet.SetActive(false);
+            effect1.SetActive(false);
+            effect2.SetActive(false);
         }
     }
 

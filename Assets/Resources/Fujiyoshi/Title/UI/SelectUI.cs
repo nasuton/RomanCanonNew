@@ -5,7 +5,7 @@ public class SelectUI : MonoBehaviour {
 
     private Vector3 default_scale;
     public bool isActive;
-    private bool isProduction;
+    public bool isProduction;
     public bool isSelected;
     public float production_time;
     void Awake()
