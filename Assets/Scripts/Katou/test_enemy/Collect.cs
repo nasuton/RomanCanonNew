@@ -23,12 +23,16 @@ public class Collect : MonoBehaviour
     {
         collect_damage = GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().status[0];
 
-        traget = transform.position;
-
         Instantiate(gravity_effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
 
         StartCoroutine("collect_destroy", destroyTime);
 	}
+    public int a;
+    void Update()
+    {
+        a++;
+        traget = transform.position;
+    }
 
     IEnumerator collect_destroy(float time)
     {

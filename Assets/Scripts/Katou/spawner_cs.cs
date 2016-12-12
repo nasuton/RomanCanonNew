@@ -34,6 +34,10 @@ public class spawner_cs : MonoBehaviour {
 
     public float inversion;
 
+    [SerializeField]
+    public GameObject score;
+
+
     Dictionary<int, int> enemy_type = new Dictionary<int, int>()
             {
                 { 0, 40},           //ノーマル
@@ -51,7 +55,7 @@ public class spawner_cs : MonoBehaviour {
     }
     
     void Start()
-    { 
+    {
         for (int i = 0; i < spawn_pos.Length; i++)
         {
             float radian = i * Mathf.PI / 180.0f;
@@ -81,12 +85,14 @@ public class spawner_cs : MonoBehaviour {
 
             if (GameObject.Find("Timer").GetComponent<timer>().countTimer <= 30.0f && !boss_spawn)
             {
-                Instantiate(enemy[4], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
+               GameObject obj = (GameObject)Instantiate(enemy[4], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
+                obj.GetComponent<enemy_state>().score = score;
                 boss_spawn = true;
             }
             else
             {
-                Instantiate(enemy[type], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
+                GameObject obj = (GameObject)Instantiate(enemy[type], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
+                obj.GetComponent<enemy_state>().score = score;
             }
 
             yield return new WaitForSeconds(time);

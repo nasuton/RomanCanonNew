@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 public class TitleManager : MonoBehaviour
 {
-
-
     [SerializeField]
     GameObject SelectedCustomPartFlame = null;
 
@@ -13,6 +11,15 @@ public class TitleManager : MonoBehaviour
 
     [SerializeField]
     GameObject parts_parent = null;
+
+    [SerializeField]
+    GameObject MiniGun = null;
+
+    [SerializeField]
+    GameObject Rocket = null;
+
+    [SerializeField]
+    GameObject Charge = null;
 
     [SerializeField]
     GameObject particle1 = null;
@@ -44,11 +51,11 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     GameObject PartsTipsText = null;
 
-    
+
 
     private int weapon_num = 0;
 
-    
+
 
 
 
@@ -67,6 +74,7 @@ public class TitleManager : MonoBehaviour
             particle3.SetActive(false);
             var obj = GameObject.Find("WeaponType");
             obj.GetComponent<WeaponTypeManager>().asset.WeaponNum = weapon_num;
+
         }
         if (other.gameObject.name == "RocketLuncher")
         {
@@ -213,7 +221,7 @@ public class TitleManager : MonoBehaviour
             num += 4;
         }
     }
-    
+
     void PartsSelect(Collider other)
     {
         bool production = false;
@@ -374,21 +382,34 @@ public class TitleManager : MonoBehaviour
     {
         if (other.gameObject.name == "BackGameSelect")
         {
-            other.GetComponent<CollisionUI>().isActive = false;
-            parts_parent.SetActive(false);
+            other.GetComponent<ButtonUI>().isActive = false;
             Sound.PlaySe("kasutamu_k");
-            other.gameObject.GetComponent<CollisionUI>().isActive = false;
-            GameObject.Find("MiniGun").SetActive(true);
-            GameObject.Find("RocketLuncher").SetActive(true);
-            GameObject.Find("ChargeCanon").SetActive(true);
+            MiniGun.SetActive(true);
+            Rocket.SetActive(true);
+            Charge.SetActive(true);
             particle1.SetActive(false);
             particle2.SetActive(false);
             particle3.SetActive(false);
+            parts_parent.GetComponent<CustomMake>().isActive = false;
         }
         if (other.gameObject.name == "GameStart")
         {
-            other.GetComponent<CollisionUI>().isActive = false;
+            other.GetComponent<ButtonUI>().isActive = false;
             SceneChanger.Instance.LoadLevel("Fujiyoshi", 1.0f);
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            WeaponSelect(other);
+            StartOrBack(other);
+            Tab(other);
+            PartsSet(other);
+            PartsSelect(other);
+            StatusChange(other);
+            DrawName();
+            DrawStatus();
         }
     }
     void OnTriggerEnter(Collider other)

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.VR;
 public class WeaponTypeManager : MonoBehaviour
 {
     [SerializeField]
@@ -28,9 +28,13 @@ public class WeaponTypeManager : MonoBehaviour
 
         return null;
     }
-    
+    void Start()
+    {
+        InputTracking.Recenter();
+    }
     void Awake()
     {
+        
         minigun.loadStatus(0);
         rocket.loadStatus(1);
         charge.loadStatus(2);

@@ -49,8 +49,12 @@ public class GunManager : MonoBehaviour
         set { rightPos = value; }
     }
     [SerializeField]
+    GameObject friezeGauge = null;
+    [SerializeField]
     GameObject friezeBar = null;
 
+    [SerializeField]
+    GameObject ChargeGauge = null;
     [SerializeField]
     GameObject ChargeBar = null;
 
@@ -76,13 +80,12 @@ public class GunManager : MonoBehaviour
     {
         if(weaponType == (int)WeaponType.MINI_GUN)
         {
-            friezeBar.SetActive(true);
+            friezeGauge.SetActive(true);
             
         }
-
         else if(weaponType == (int)WeaponType.RAIL_GUN)
         {
-            friezeBar.SetActive(true);
+            ChargeGauge.SetActive(true);
         }
     }
     GameObject obj;
@@ -111,6 +114,7 @@ public class GunManager : MonoBehaviour
         if (weaponType == (int)WeaponType.RAIL_GUN)
         {
             obj.transform.localPosition = new Vector3(-0.3f,-0.1f, -4.1f);
+            obj.GetComponent<RailGunController>().roman_bar = RomanGaugeBar;
         }
     }
     void gunTransform()

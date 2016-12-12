@@ -33,7 +33,7 @@ public class BulletOfRailGun : MonoBehaviour
 
     public void Reset()
     {
-        transform.localPosition = new Vector3(0,0, GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[2]);
+        transform.localPosition = new Vector3(0,0, GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[2]/2);
         transform.localScale = new Vector3(
             GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[4],
             GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[2],

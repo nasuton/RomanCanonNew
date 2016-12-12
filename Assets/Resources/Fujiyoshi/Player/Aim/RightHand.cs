@@ -17,7 +17,7 @@ public class RightHand : MonoBehaviour {
         }
         if (weaponType == (int)GunManager.WeaponType.RAIL_GUN)
         {
-            this.transform.localPosition = new Vector3(-0.158f, -0.47f, -1.347f);
+            this.transform.localPosition = new Vector3(-0.158f, -0.37f, -1.347f);
         }
     }
 	

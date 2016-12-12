@@ -19,13 +19,13 @@ public class timer : MonoBehaviour
         {
             countTimer = 0;
 
-            GetComponent<Text>().text = "Time " + countTimer.ToString("F2");
+            GetComponent<TextMesh>().text = "Time " + countTimer.ToString("F0");
         }
         else
         {
             countTimer -= Time.deltaTime;
 
-            GetComponent<Text>().text = "Time " + countTimer.ToString("F2");
+            GetComponent<TextMesh>().text = "Time " + countTimer.ToString("F0");
         }
 
     }
