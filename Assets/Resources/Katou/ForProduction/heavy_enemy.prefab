@@ -1177,6 +1177,9 @@ MonoBehaviour:
   speed: 2
   add_score: 30
   maxhp: 300
+  maxpower: 30
+  interval: 2
+  angle: 15
 --- !u!114 &114000013332060622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1189,8 +1192,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDed: 0
+  get_together: 0
   effect: {fileID: 0}
   maxInvincibleTime: 1
+  clip: {fileID: 0}
   scorePoint: 10
 --- !u!136 &136000013147369076
 CapsuleCollider:

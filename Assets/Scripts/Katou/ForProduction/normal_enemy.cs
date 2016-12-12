@@ -7,22 +7,32 @@ public class normal_enemy : MonoBehaviour
 {
     private Vector3 target;
 
+    private Vector3 player;
+
     [SerializeField]
     private float speed = 1.0f;
 
+    //加算するスコア
     [SerializeField]
     private int add_score = 10;
 
     enemy_state state;
 
+    //体力
     [SerializeField]
     private int maxhp = 100;
 
+    //攻撃力
     [SerializeField]
-    private int maxattack;
+    private int maxpower;
 
+    //動く際の角度
     [SerializeField]
     private float angle = 20.0f;
+
+    //攻撃するまでの間隔
+    [SerializeField]
+    private float interval;
 
     float angleDir;
     bool nexttarget;
@@ -31,11 +41,11 @@ public class normal_enemy : MonoBehaviour
 
     void Start ()
     {
-        target = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
+        player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        state.Attack = maxattack;
+        state.Power = maxpower;
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;
@@ -43,9 +53,20 @@ public class normal_enemy : MonoBehaviour
 	
 	void Update ()
     {
-        if (state.isDed) return;
+        if (state.isDed == true) return;
+        if (state.get_together == true) return;
 
-        Move();
+        float distance = Vector3.Distance(player, transform.position);
+
+        if(distance <= 10.0f)
+        {
+            state.Attack(interval);
+        }
+        else
+        {
+            Move();
+        }
+        
     }
 
     void Move()

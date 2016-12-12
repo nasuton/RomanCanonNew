@@ -6,20 +6,32 @@ public class heavy_enemy : MonoBehaviour
 {
     private Vector3 target;
 
+    private Vector3 player;
+
     [SerializeField]
     private float speed = 2.0f;
 
+    //加算するスコア
     [SerializeField]
     private int add_score = 30;
 
     enemy_state state;
 
+    //体力
     [SerializeField]
     private int maxhp = 300;
 
+    //攻撃力
     [SerializeField]
-    private int maxattack;
+    private int maxpower;
 
+    //攻撃するまでの時間
+    [SerializeField]
+    private float interval;
+
+    //-------------------------------以下のものは移動の使用--------------------//
+
+    //動くときの角度
     [SerializeField]
     private float angle = 15;
 
@@ -30,11 +42,11 @@ public class heavy_enemy : MonoBehaviour
 
     void Start ()
     {
-        target = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
+        player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        state.Attack = maxattack;
+        state.Power = maxpower;
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;
@@ -42,9 +54,20 @@ public class heavy_enemy : MonoBehaviour
 	
 	void Update ()
     {
-        if (state.isDed) return;
+        if (state.isDed == true) return;
+        if (state.get_together == true) return;
 
-        Move();
+        float distence = Vector3.Distance(transform.position, player);
+
+        if (distence <= 10.0f)
+        {
+            state.Attack(interval);
+        }
+        else
+        {
+            Move();
+        }
+        
     }
 
     void Move()

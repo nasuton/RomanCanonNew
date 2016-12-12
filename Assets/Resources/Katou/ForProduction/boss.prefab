@@ -1996,9 +1996,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDed: 0
+  get_together: 0
   effect: {fileID: 0}
   maxInvincibleTime: 1
-  scorePoint: 10
+  clip: {fileID: 0}
+  scorePoint: 50
 --- !u!114 &114000012643796862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2013,6 +2015,8 @@ MonoBehaviour:
   speed: 3.5
   add_score: 50
   maxhp: 800
+  maxpower: 100
+  interval: 0.01
 --- !u!136 &136000011759511812
 CapsuleCollider:
   m_ObjectHideFlags: 1

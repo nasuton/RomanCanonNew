@@ -6,6 +6,8 @@ public class speed_enemy : MonoBehaviour
 { 
     private Vector3 target;
 
+    private Vector3 player;
+
     [SerializeField]
     private float speed = 1.5f;
 
@@ -18,8 +20,13 @@ public class speed_enemy : MonoBehaviour
     private int maxhp = 75;
 
     [SerializeField]
-    private int maxattack;
+    private int maxpower;
 
+    [SerializeField]
+    private float interval;
+
+
+    //-----------------------以下のものは移動に使用-------------------------//
     [SerializeField]
     private float angle = 90.0f;
 
@@ -30,22 +37,32 @@ public class speed_enemy : MonoBehaviour
 
     void Start ()
     {
-        target = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
+        player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         angleDir = GameObject.Find("Spawner").GetComponent<spawner_cs>().inversion;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        state.Attack = maxattack;
+        state.Power = maxpower;
         nexttarget = false;
         nexttime = 0.0f;
         nowtime = 0.0f;
-        angleDir = transform.localEulerAngles.y - 90.0f;
     }
 	
 	void Update ()
     {
-        if (state.isDed) return;
+        if (state.isDed == true) return;
+        if (state.get_together == true) return;
 
-        Move();
+        float distance = Vector3.Distance(transform.position, player);
+
+        if(distance <= 10.0f)
+        {
+            state.Attack(interval);
+        }
+        else
+        {
+            Move();
+        }
+
     }
 
     void Move()
