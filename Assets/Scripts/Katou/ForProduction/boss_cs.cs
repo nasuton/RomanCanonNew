@@ -10,27 +10,44 @@ public class boss_cs : MonoBehaviour
     [SerializeField]
     private float speed = 3.5f;
 
+    //加算するスコア
     [SerializeField]
     private int add_score = 50;
 
     enemy_state state;
 
+    //体力
     [SerializeField]
     private int maxhp = 800;
+
+    //攻撃力
+    [SerializeField]
+    private int maxpower;
+
+    //攻撃するまでの間隔
+    [SerializeField]
+    private float interval;
 
     void Start()
     {
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
+        state.Power = maxpower;
     }
 
     void Update()
     {
-        if (state.isDed) return;
+        if (state.isDed == true) return;
+        if (state.get_together == true) return;
 
-        //float e_p_dis = Vector3.Distance(transform.position, player);
+        float distance = Vector3.Distance(transform.position, player);
 
+        if(distance <= 10.0f)
+        {
+            state.Attack(interval);
+        }
+        else
         {
             Move();
         }

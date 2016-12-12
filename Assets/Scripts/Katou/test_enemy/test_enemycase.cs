@@ -15,7 +15,7 @@ public class test_enemycase : MonoBehaviour
 	
 	void Update ()
     {
-        if (test_state.get_together) return;
+        //if (test_state.get_together) return;
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }

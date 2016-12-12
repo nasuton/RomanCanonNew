@@ -3,47 +3,62 @@ using System.Collections;
 
 public class test_enemystate : MonoBehaviour
 {
-    public bool get_together;
+    float interval;
 
-    Vector3 t;
+    gameman gamemain;
 
-    float speed = 1.5f;
+    private int power;
 
-    float time_de;
+    Vector3 target;
+
+    bool together;
+
+    public int Atteck
+    {
+        get
+        {
+            return power;
+        }
+        set
+        {
+            power = value;
+        }
+    }
 
     void Start()
     {
-        get_together = false;
+        gamemain = GameObject.Find("gamemanager").GetComponent<gameman>();
+        interval = 0.0f;
     }
 
     void Update()
     {
-        if(get_together)
+        if(gamemain.end == true)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(t - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.0f);
+            Destroy(gameObject);
+        }
 
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(together)
+        {
+            
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Collect>() == null) return;
-
-        get_together = true;
-
-        t = other.gameObject.GetComponent<Collect>().traget;
-
-        time_de = other.gameObject.GetComponent<Collect>().destroyTime;
-
-        StartCoroutine("change", time_de);
+        target = other.gameObject.GetComponent<Collect>().traget;
+        together = true;
     }
 
-    IEnumerator change(float time)
+    public void Attack(float attack_interval)
     {
-        yield return new WaitForSeconds(time);
-
-        get_together = false;
+        interval += Time.deltaTime;
+        if(attack_interval <= interval)
+        {
+            gamemain.Player_hp -= power;
+            interval = 0.0f;
+        }
     }
+
 }
