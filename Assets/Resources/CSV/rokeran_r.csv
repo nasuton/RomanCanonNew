@@ -1,0 +1,5 @@
+﻿roman_name,power_buf,rate_buf,scatter_buf,wide_buf,speed_buf,power_debuf,rate_debuf,scatter_debuf,wide_debuf,speed_debuf,roman_type,roman_count,roman_time,debuf_time,roman_tips1,roman_tips2,roman_tips3
+メ―ルボム,0.5,0.3,0,0,0,0,1.2,0,0,0,0,1,20,25,「こんだけ叩き込んでも伝わらないか・・・」「馬鹿野郎！伝わるまで叩き込むんだよ！」,,
+銀冠,2,0,0,2,0,0.5,0,0,0.7,0,1,1,10,25,一瞬がゆっくりと燃え上がる、匠のなせる業,,
+グラヴィタ,5,0,0,3,0,0,0,0,0.2,0,2,1,5,15,地球の引力とは別の引力を発生させる「この技術にはニュートンもびっくりするだろうな」,,
+リミッター解除,2,0.5,0,2,1.5,0.5,1.5,0,0,0,3,2,10,15,シンプルな性能強化機構、単純に性能が上がる,,

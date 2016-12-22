@@ -109,7 +109,7 @@ public class GunManager : MonoBehaviour
         }
         if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
         {
-            obj.transform.localPosition = new Vector3(-1.37f, -1.03f, -3.7f);
+            obj.transform.localPosition = new Vector3(-1.37f, -1.5f, -4.7f);
         }
         if (weaponType == (int)WeaponType.RAIL_GUN)
         {

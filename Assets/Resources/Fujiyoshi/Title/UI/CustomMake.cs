@@ -16,15 +16,18 @@ public class CustomMake : MonoBehaviour {
 	void Update () {
         if (!isActive)
         {
-            transform.DOScale(new Vector3(0, 0, 1), 0.5f).SetEase(Ease.OutBack);
+            transform.DOScale(new Vector3(1, 1, 1), 0.5f).SetEase(Ease.OutBack);
             production_time += Time.deltaTime;
-            if (production_time >= 1)
+            if (production_time >= 0)
             {
                 isProduction = false;
                 production_time = 0;
                 isActive = true;
                 gameObject.SetActive(isProduction);
             }
+        }else
+        {
+            transform.DOScale(new Vector3(1, 1, 1),0.5f).SetEase(Ease.OutBack);
         }
     }
 }

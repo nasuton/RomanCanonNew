@@ -2976,7 +2976,7 @@ Prefab:
         type: 2}
       propertyPath: weapon.Array.data[2]
       value: 
-      objectReference: {fileID: 1000013406530050, guid: eb48fac69149b8b45b8888605aa47c77,
+      objectReference: {fileID: 1000010403812194, guid: eb48fac69149b8b45b8888605aa47c77,
         type: 2}
     - target: {fileID: 114000013678110348, guid: 54409aaaf5e4acd49a7d41923088db94,
         type: 2}
@@ -2998,6 +2998,23 @@ Prefab:
       propertyPath: RomanGaugeBar
       value: 
       objectReference: {fileID: 2098660528}
+    - target: {fileID: 114000014104357532, guid: 54409aaaf5e4acd49a7d41923088db94,
+        type: 2}
+      propertyPath: status.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013678110348, guid: 54409aaaf5e4acd49a7d41923088db94,
+        type: 2}
+      propertyPath: weapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011177595426, guid: 7726b63f25568dd48b759e3e288eff48,
+        type: 2}
+    - target: {fileID: 114000013678110348, guid: 54409aaaf5e4acd49a7d41923088db94,
+        type: 2}
+      propertyPath: weapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000012365305900, guid: 9e55d15767d43e045a968a7e9a7a7856,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54409aaaf5e4acd49a7d41923088db94, type: 2}
   m_IsPrefabParent: 0

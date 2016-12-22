@@ -350,9 +350,9 @@ MonoBehaviour:
   fingerType: 2
   bones:
   - {fileID: 0}
-  - {fileID: 1466762668}
-  - {fileID: 907396089}
-  - {fileID: 2084578520}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   joints:
   - {fileID: 0}
   - {fileID: 0}
@@ -2897,7 +2897,9 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
 --- !u!1 &374892781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,7 +3274,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 450586740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.6}
+  m_LocalPosition: {x: 0, y: -0.12, z: 1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -3332,9 +3334,9 @@ MonoBehaviour:
   fingerType: 1
   bones:
   - {fileID: 0}
-  - {fileID: 1477363162}
-  - {fileID: 1743901906}
-  - {fileID: 2137244359}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   joints:
   - {fileID: 0}
   - {fileID: 0}
@@ -3490,6 +3492,7 @@ GameObject:
   - 54: {fileID: 499286913}
   - 114: {fileID: 499286912}
   - 114: {fileID: 499286917}
+  - 114: {fileID: 499286918}
   m_Layer: 0
   m_Name: Parts1
   m_TagString: CustomParts
@@ -3607,7 +3610,38 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
+--- !u!114 &499286918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499286910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33db182c6f1fd684282c165fbac48333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts_name: 
+  power_buf: 0
+  rate_buf: 0
+  scatter_buf: 0
+  wide_buf: 0
+  speed_buf: 0
+  power_debuf: 0
+  rate_debuf: 0
+  scatter_debuf: 0
+  wide_debuf: 0
+  speed_debuf: 0
+  roman_type: 0
+  roman_count: 0
+  roman_time: 0
+  debuf_time: 0
+  tips1: 
+  tips2: 
+  tips3: 
 --- !u!1 &520267379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3913,7 +3947,7 @@ Transform:
   m_GameObject: {fileID: 554995866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.13682875, y: 0.14312942, z: -0.06423104}
-  m_LocalScale: {x: 1.7, y: 1.4, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.4, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 499286911}
@@ -4409,8 +4443,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 658267404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.141}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: -0.058}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.000001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1015767264}
@@ -4964,7 +4998,7 @@ Transform:
   m_GameObject: {fileID: 895758547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.25672874, y: 0.17272945, z: -0.06423104}
-  m_LocalScale: {x: 0.5, y: 0.42, z: 0.01}
+  m_LocalScale: {x: 0.5, y: 0.42, z: 0.0001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1869884890}
@@ -5025,9 +5059,9 @@ MonoBehaviour:
   fingerType: 3
   bones:
   - {fileID: 0}
-  - {fileID: 1821018117}
-  - {fileID: 1220421217}
-  - {fileID: 412001094}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   joints:
   - {fileID: 0}
   - {fileID: 0}
@@ -5168,7 +5202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &945818183
 Transform:
   m_ObjectHideFlags: 0
@@ -5201,8 +5235,8 @@ MonoBehaviour:
   fingerType: 0
   bones:
   - {fileID: 0}
-  - {fileID: 1037530903}
-  - {fileID: 324618410}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 2061978745}
   joints:
   - {fileID: 0}
@@ -7386,7 +7420,9 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
 --- !u!1 &1015767263
 GameObject:
   m_ObjectHideFlags: 0
@@ -7933,6 +7969,7 @@ GameObject:
   - 54: {fileID: 1119865513}
   - 114: {fileID: 1119865512}
   - 114: {fileID: 1119865517}
+  - 114: {fileID: 1119865518}
   m_Layer: 0
   m_Name: Parts4
   m_TagString: CustomParts
@@ -8050,7 +8087,38 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
+--- !u!114 &1119865518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1119865510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33db182c6f1fd684282c165fbac48333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts_name: 
+  power_buf: 0
+  rate_buf: 0
+  scatter_buf: 0
+  wide_buf: 0
+  speed_buf: 0
+  power_debuf: 0
+  rate_debuf: 0
+  scatter_debuf: 0
+  wide_debuf: 0
+  speed_debuf: 0
+  roman_type: 0
+  roman_count: 0
+  roman_time: 0
+  debuf_time: 0
+  tips1: 
+  tips2: 
+  tips3: 
 --- !u!1 &1128555145 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013968936502, guid: 096aa5d46a0ebd344ae7c379c778335f,
@@ -8742,6 +8810,7 @@ MonoBehaviour:
   - {fileID: 973566468}
   - {fileID: 1598436526}
   - {fileID: 1070912146}
+  RomanPartsTag: {fileID: 1869884889}
   PartsNameText: {fileID: 1469087053}
   PartsTipsText: {fileID: 846937052}
 --- !u!54 &1225170664
@@ -11127,7 +11196,7 @@ Transform:
   m_GameObject: {fileID: 1449880498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.20427127, y: 0.25072944, z: -0.06423104}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1714340404}
@@ -11695,7 +11764,7 @@ Transform:
   m_GameObject: {fileID: 1518889517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.068, y: -0.115779676, z: 0.62797415}
-  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 374892782}
@@ -12500,6 +12569,7 @@ GameObject:
   - 54: {fileID: 1644159567}
   - 114: {fileID: 1644159566}
   - 114: {fileID: 1644159571}
+  - 114: {fileID: 1644159572}
   m_Layer: 0
   m_Name: Parts2
   m_TagString: CustomParts
@@ -12617,7 +12687,38 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
+--- !u!114 &1644159572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644159564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33db182c6f1fd684282c165fbac48333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts_name: 
+  power_buf: 0
+  rate_buf: 0
+  scatter_buf: 0
+  wide_buf: 0
+  speed_buf: 0
+  power_debuf: 0
+  rate_debuf: 0
+  scatter_debuf: 0
+  wide_debuf: 0
+  speed_debuf: 0
+  roman_type: 0
+  roman_count: 0
+  roman_time: 0
+  debuf_time: 0
+  tips1: 
+  tips2: 
+  tips3: 
 --- !u!1 &1677462425
 GameObject:
   m_ObjectHideFlags: 0
@@ -12868,7 +12969,9 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
 --- !u!1001 &1712623481
 Prefab:
   m_ObjectHideFlags: 0
@@ -13831,7 +13934,9 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
 --- !u!1 &1869884889
 GameObject:
   m_ObjectHideFlags: 0
@@ -13954,16 +14059,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1869884889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62bf3c7c0c2800f428f40ca8609829d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 33db182c6f1fd684282c165fbac48333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Status1: 0
-  Status2: 0
-  Status3: 0
-  Status4: 0
-  Status5: 0
-  Tips: 
+  parts_name: 
+  power_buf: 0
+  rate_buf: 0
+  scatter_buf: 0
+  wide_buf: 0
+  speed_buf: 0
+  power_debuf: 0
+  rate_debuf: 0
+  scatter_debuf: 0
+  wide_debuf: 0
+  speed_debuf: 0
+  roman_type: 0
+  roman_count: 0
+  roman_time: 0
+  debuf_time: 0
+  tips1: 
+  tips2: 
+  tips3: 
 --- !u!1 &1890223956
 GameObject:
   m_ObjectHideFlags: 0
@@ -14218,6 +14334,7 @@ GameObject:
   - 54: {fileID: 1981671316}
   - 114: {fileID: 1981671315}
   - 114: {fileID: 1981671320}
+  - 114: {fileID: 1981671321}
   m_Layer: 0
   m_Name: Parts3
   m_TagString: CustomParts
@@ -14335,7 +14452,38 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
+--- !u!114 &1981671321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981671313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33db182c6f1fd684282c165fbac48333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts_name: 
+  power_buf: 0
+  rate_buf: 0
+  scatter_buf: 0
+  wide_buf: 0
+  speed_buf: 0
+  power_debuf: 0
+  rate_debuf: 0
+  scatter_debuf: 0
+  wide_debuf: 0
+  speed_debuf: 0
+  roman_type: 0
+  roman_count: 0
+  roman_time: 0
+  debuf_time: 0
+  tips1: 
+  tips2: 
+  tips3: 
 --- !u!1 &1985285529
 GameObject:
   m_ObjectHideFlags: 0
@@ -14475,8 +14623,8 @@ MonoBehaviour:
   - {fileID: 41429188}
   - {fileID: 896065145}
   - {fileID: 708833269}
-  palm: {fileID: 582971523}
-  forearm: {fileID: 1890223957}
+  palm: {fileID: 0}
+  forearm: {fileID: 0}
   wristJoint: {fileID: 0}
   elbowJoint: {fileID: 0}
   filtering: 0.5
@@ -15387,7 +15535,9 @@ MonoBehaviour:
   Status3: 0
   Status4: 0
   Status5: 0
-  Tips: 
+  Tips1: 
+  Tips2: 
+  Tips3: 
 --- !u!1 &2123509965
 GameObject:
   m_ObjectHideFlags: 0
@@ -15644,6 +15794,7 @@ MonoBehaviour:
   - {fileID: 973566468}
   - {fileID: 1598436526}
   - {fileID: 1070912146}
+  RomanPartsTag: {fileID: 1869884889}
   PartsNameText: {fileID: 1469087053}
   PartsTipsText: {fileID: 846937052}
 --- !u!1 &2140789642
