@@ -25,10 +25,7 @@ public class enemy_state : MonoBehaviour
     [SerializeField]
     public GameObject score;
 
-    //new AudioSource audio;
-
-    //[SerializeField,Tooltip("死んだとき")]
-    //private AudioClip die_clip;
+    new AudioSource audio;
 
     //[SerializeField, Tooltip("攻撃したとき")]
     //private AudioClip attack_clip;
@@ -116,12 +113,11 @@ public class enemy_state : MonoBehaviour
         //audio.Play();
         //Instantiate(die_effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
         Destroy(this.gameObject);
-        GameObject.Find("ScoreManager").GetComponent<score>().ScoreValue += scorePoint;
-        score.GetComponent<score_notation>().Add_Score();
+        GameObject.Find("ScoreManager").GetComponent<score>().Continuous_Kill(scorePoint);
         GameObject.Find("RomanBar").GetComponent<RomanGauge>().chargeRomenGaouge(10);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collision other)
     {
         if (other.gameObject.GetComponent<BulletDamege>() == null) return;
         if (isInvincible == true) return;
@@ -133,7 +129,7 @@ public class enemy_state : MonoBehaviour
         //audio.Play();
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collision other)
     {
         hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
 
