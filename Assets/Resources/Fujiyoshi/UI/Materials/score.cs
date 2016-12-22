@@ -62,19 +62,19 @@ public class score : MonoBehaviour
         continuous_time = 0.0f;
         if (continuous >= 10)
         {
-            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, score * 2, 0.5f);
+            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, ScoreValue + (score * 2), 0.5f);
         }
         else if(continuous >= 20)
         {
-            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, score * 3, 0.5f);
+            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, ScoreValue + (score * 3), 0.5f);
         }
         else if(continuous >= 30)
         {
-            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, score * 4, 0.5f);
+            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, ScoreValue + (score * 4), 0.5f);
         }
         else
         {
-            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, score, 0.5f);
+            DOTween.To(() => ScoreValue, (x) => ScoreValue = x, ScoreValue + score, 0.5f);
         }
     }
 
