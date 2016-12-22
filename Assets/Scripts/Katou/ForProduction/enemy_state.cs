@@ -22,23 +22,27 @@ public class enemy_state : MonoBehaviour
 
     gameman gamemain;
 
-    new AudioSource audio;
+    [SerializeField]
+    public GameObject score;
 
-    [SerializeField,Tooltip("死んだとき")]
-    private AudioClip die_clip;
+    //new AudioSource audio;
 
-    [SerializeField, Tooltip("攻撃したとき")]
-    private AudioClip attack_clip;
+    //[SerializeField,Tooltip("死んだとき")]
+    //private AudioClip die_clip;
 
-    [SerializeField, Tooltip("攻撃が当たった時")]
-    private AudioClip hit_clip;
+    //[SerializeField, Tooltip("攻撃したとき")]
+    //private AudioClip attack_clip;
 
-    [SerializeField, Tooltip("攻撃があったた時のエフェクト")]
-    private GameObject hit_effect;
+    //[SerializeField, Tooltip("攻撃が当たった時")]
+    //private AudioClip hit_clip;
 
-    [SerializeField, Tooltip("死ぬ時のエフェクト")]
-    private GameObject die_effect;
+    //[SerializeField, Tooltip("攻撃があったた時のエフェクト")]
+    //private GameObject hit_effect;
 
+    //[SerializeField, Tooltip("死ぬ時のエフェクト")]
+    //private GameObject die_effect;
+
+    [SerializeField]
     private int hp;
 
     public int Hp
@@ -75,7 +79,7 @@ public class enemy_state : MonoBehaviour
         isDed = false;
         gamemain = GameObject.Find("gamemanager").GetComponent<gameman>();
         interval = 0.0f;
-        audio = GetComponent<AudioSource>();
+        //audio = GetComponent<AudioSource>();
         damage = 0.0f;
     }
 
@@ -83,7 +87,7 @@ public class enemy_state : MonoBehaviour
     {
         if(gamemain.end == true)
         {
-            Instantiate(die_effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+            //Instantiate(die_effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
             Destroy(gameObject);
         }
 
@@ -100,17 +104,20 @@ public class enemy_state : MonoBehaviour
 
         if (get_together)
         {
+            Quaternion targetRotation = Quaternion.LookRotation(t - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.0f);
 
+            transform.Translate(Vector3.forward * 0.1f *Time.deltaTime);
         }
 
         if (hp > 0) return;
         isDed = true;
-        audio.clip = die_clip;
-        audio.Play();
-        Instantiate(die_effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        //audio.clip = die_clip;
+        //audio.Play();
+        //Instantiate(die_effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
         Destroy(this.gameObject);
         GameObject.Find("ScoreManager").GetComponent<score>().ScoreValue += scorePoint;
-        GameObject.Find("ScoreUI").GetComponent<score_notation>().Add_Score();
+        score.GetComponent<score_notation>().Add_Score();
         GameObject.Find("RomanBar").GetComponent<RomanGauge>().chargeRomenGaouge(10);
     }
 
@@ -122,14 +129,19 @@ public class enemy_state : MonoBehaviour
         isInvincible = true;
         hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
 
-        audio.clip = hit_clip;
-        audio.Play();
+        //audio.clip = hit_clip;
+        //audio.Play();
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
 
         if (other.gameObject.GetComponent<Collect>() == null) return;
 
         get_together = true;
 
-        damage = other.gameObject.GetComponent<Collect>().Collect_Damage;
+        hp -= (int)other.gameObject.GetComponent<Collect>().Collect_Damage;
 
         t = other.gameObject.GetComponent<Collect>().traget;
 
@@ -138,14 +150,11 @@ public class enemy_state : MonoBehaviour
         StartCoroutine("change", time_de);
     }
 
-    void OnTriggerStay(Collider other)
-    {
-
-    }
-
     IEnumerator change(float time)
     {
         yield return new WaitForSeconds(time);
+
+        hp -= (int)damage;
 
         get_together = false;
     }
@@ -155,8 +164,8 @@ public class enemy_state : MonoBehaviour
         interval += Time.deltaTime;
         if(attack_interval <= interval)
         {
-            audio.clip = attack_clip;
-            audio.Play();
+            //audio.clip = attack_clip;
+            //audio.Play();
             gamemain.Player_hp -= power;
             interval = 0.0f;
         }

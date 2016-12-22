@@ -72,8 +72,7 @@ public class jump_enemy : MonoBehaviour
         else
         {
             Move();
-        }
-        
+        }        
     }
 
     void Move()

@@ -1,0 +1,5 @@
+roman_name,power_buf,rate_buf,scatter_buf,wide_buf,speed_buf,power_debuf,rate_debuf,scatter_debuf,wide_debuf,speed_debuf,roman_type,roman_count,roman_time,debuf_time,roman_tips1,roman_tips2,roman_tips3
+トリガーハッピー,0,0.5,0,100,100,0,0,0,0,0.3,0,1,30,15,「こんな機構作ったの誰だ！俺をころ・・・　　データ破損ここからは読めません,,
+千輪,3,0,0,0,0,0.5,0,0,0.5,0,1,1,15,20,見るものの心をこの弾は唖然とさせる　まるで連発される花火,,
+グルート76,0,0,0,0,0,0,1.3,0,0,0.7,2,2,10,15,その残り火は燃え尽きるまで喰らいつく,,
+リミッター解除,2,0.5,0.5,100,100,0.5,2,1.5,0.5,0.5,3,2,10,20,安定した性能強化機器、可もなく不可もなく使いやすい,,

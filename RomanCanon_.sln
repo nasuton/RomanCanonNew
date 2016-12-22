@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanCanon_.CSharp", "RomanCanon_.CSharp.csproj", "{544BA3C6-6E84-7256-5A3E-14C3A587C5DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanCanon_.CSharp.Editor", "RomanCanon_.CSharp.Editor.csproj", "{81D8B0EB-4422-B939-6E13-59AD6E39137A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{544BA3C6-6E84-7256-5A3E-14C3A587C5DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544BA3C6-6E84-7256-5A3E-14C3A587C5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544BA3C6-6E84-7256-5A3E-14C3A587C5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544BA3C6-6E84-7256-5A3E-14C3A587C5DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D8B0EB-4422-B939-6E13-59AD6E39137A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D8B0EB-4422-B939-6E13-59AD6E39137A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D8B0EB-4422-B939-6E13-59AD6E39137A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D8B0EB-4422-B939-6E13-59AD6E39137A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

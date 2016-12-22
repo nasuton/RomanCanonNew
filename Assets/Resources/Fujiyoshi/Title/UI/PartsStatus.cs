@@ -8,5 +8,7 @@ public class PartsStatus : MonoBehaviour {
     public float Status3;
     public float Status4;
     public float Status5;
-    public string Tips;
+    public string Tips1;
+    public string Tips2;
+    public string Tips3;
 }

@@ -22,7 +22,7 @@ public class ChangePosition : MonoBehaviour {
         }
         else if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
         {
-            this.transform.localPosition = new Vector3(0, 0, 1.48f);
+            this.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 	public void Scatter()
@@ -39,7 +39,7 @@ public class ChangePosition : MonoBehaviour {
         }
         else if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
         {
-            this.transform.localPosition = new Vector3(0, 0, 1.48f);
+            this.transform.localPosition = new Vector3(0, 0,3);
         }
     }
     

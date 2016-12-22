@@ -255,8 +255,8 @@ GameObject:
   - 95: {fileID: 95000012185555910}
   - 54: {fileID: 54000013921487056}
   - 136: {fileID: 136000013147369076}
-  - 114: {fileID: 114000013332060622}
   - 114: {fileID: 114000010419021946}
+  - 114: {fileID: 114000012954574740}
   m_Layer: 0
   m_Name: heavy_enemy
   m_TagString: Enemy
@@ -1145,7 +1145,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!95 &95000012185555910
 Animator:
   serializedVersion: 3
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   maxpower: 30
   interval: 2
   angle: 15
---- !u!114 &114000013332060622
+--- !u!114 &114000012954574740
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1188,14 +1188,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012787233108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f072d8065ff4d49a4e1a0ec962c19b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c77ffaf1bfcffd408cc46a11c8b8d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDed: 0
   get_together: 0
-  effect: {fileID: 0}
   maxInvincibleTime: 1
-  clip: {fileID: 0}
+  score: {fileID: 0}
+  hp: 0
   scorePoint: 10
 --- !u!136 &136000013147369076
 CapsuleCollider:

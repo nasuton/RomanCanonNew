@@ -1,0 +1,5 @@
+﻿roman_name,power_buf,rate_buf,scatter_buf,wide_buf,speed_buf,power_debuf,rate_debuf,scatter_debuf,wide_debuf,speed_debuf,roman_type,roman_count,roman_time,debuf_time,roman_tips1,roman_tips2,roman_tips3
+ストリーム,3,0.25,0,0.5,0,0,0,0,0,0.5,0,1,15,20,今、貴様は嵐を従えている,,
+大柳,2,2,0.5,2,2,0.5,2,0,0,0,1,1,10,35,風情ある見た目とは裏腹に敵の目には絶望が映る,,
+グランツ,2,1.5,0,3,3,0,0,0,0.5,0,2,1,5,15,名状しがたい光、全てを許し溶かしつくす光である,,
+リミッター解除,2,0.5,0,1.5,2,0,0,0.5,0.5,0,3,2,10,15,許容範囲オーバーの光線を打ち出す,,

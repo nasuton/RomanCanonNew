@@ -13,11 +13,11 @@ public class RightHand : MonoBehaviour {
         }
         if (weaponType == (int)GunManager.WeaponType.ROCKET_LAUNCHER)
         {
-            this.transform.localPosition = new Vector3(-0.103f, -0.033f, -0.937f);
+            this.transform.localPosition = new Vector3(-0.103f, -0.1f, -1);
         }
         if (weaponType == (int)GunManager.WeaponType.RAIL_GUN)
         {
-            this.transform.localPosition = new Vector3(-0.158f, -0.47f, -1.347f);
+            this.transform.localPosition = new Vector3(-0.158f, -0.37f, -1.117f);
         }
     }
 	
