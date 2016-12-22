@@ -117,7 +117,7 @@ public class enemy_state : MonoBehaviour
         GameObject.Find("RomanBar").GetComponent<RomanGauge>().chargeRomenGaouge(10);
     }
 
-    void OnTriggerEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.GetComponent<BulletDamege>() == null) return;
         if (isInvincible == true) return;
@@ -129,7 +129,7 @@ public class enemy_state : MonoBehaviour
         //audio.Play();
     }
 
-    void OnTriggerStay(Collision other)
+    void OnCollisionStay(Collision other)
     {
         hp -= (int)other.gameObject.GetComponent<BulletDamege>().Damege;
 
