@@ -7,6 +7,9 @@ public class RomanGauge : MonoBehaviour {
     [SerializeField]
     private float roman_max = 100.0f;
 
+    [SerializeField]
+    GameObject screenEffect = null;
+
     //ロマンモードかどうか
     public bool roman_mode = false;
     //クールタイムかどうか
@@ -49,6 +52,7 @@ public class RomanGauge : MonoBehaviour {
         if (roman_mode == true)
         {
             roman_value -= 100 * ((1 / GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().roman_type.active_time) * Time.deltaTime);
+            screenEffect.SetActive(true);
         }
     }
     void gaugeChange()
@@ -78,6 +82,10 @@ public class RomanGauge : MonoBehaviour {
     }
 
 	void Update() {
+        if(roman_mode == false)
+        {
+            screenEffect.SetActive(false);
+        }
         changeRomanMode();
         changeCoolTime();
         gaugeChange();

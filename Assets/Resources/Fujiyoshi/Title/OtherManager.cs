@@ -512,7 +512,7 @@ public class OtherManager : MonoBehaviour
         WeaponType.GetComponent<DownPartsStatus>().status[4] = (float)RomanPartsTag.GetComponent<SelectRoman>().speed_debuf;
 
 
-        WeaponType.GetComponent<RomanCanonStatus>().BulletNum = (int)RomanPartsTag.GetComponent<SelectRoman>().roman_count;
+        WeaponType.GetComponent<RomanCanonStatus>().BulletNum = (int)RomanPartsTag.GetComponent<SelectRoman>().roman_type;
         WeaponType.GetComponent<RomanCanonStatus>().CanRomanModeCount = (int)RomanPartsTag.GetComponent<SelectRoman>().roman_count;
         WeaponType.GetComponent<RomanCanonStatus>().RomanModeTime = (int)RomanPartsTag.GetComponent<SelectRoman>().roman_time;
         WeaponType.GetComponent<RomanCanonStatus>().DebuffTime = (int)RomanPartsTag.GetComponent<SelectRoman>().debuf_time;

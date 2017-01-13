@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012437269418}
+  m_RootGameObject: {fileID: 1000010021697026}
   m_IsPrefabParent: 1
---- !u!1 &1000012437269418
+--- !u!1 &1000010021697026
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000011776038234}
-  - 114: {fileID: 114000013782697872}
+  - 4: {fileID: 4000011544309706}
+  - 114: {fileID: 114000011778518760}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000011776038234
+--- !u!4 &4000011544309706
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012437269418}
+  m_GameObject: {fileID: 1000010021697026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7217902, y: 1.3606875, z: 0.38965788}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,15 +40,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000013782697872
+--- !u!114 &114000011778518760
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012437269418}
+  m_GameObject: {fileID: 1000010021697026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b72cfec74c62964a8f606276c67c57e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0598427a50b53c244870ec46a2558c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
+  reset_time: 0

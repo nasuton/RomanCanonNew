@@ -110,11 +110,11 @@ public class GunManager : MonoBehaviour
         if (weaponType == (int)WeaponType.ROCKET_LAUNCHER)
         {
             obj.transform.localPosition = new Vector3(-1.37f, -1.5f, -4.7f);
+            obj.GetComponent<RocketLauncherController>().roman_bar = RomanGaugeBar;
         }
         if (weaponType == (int)WeaponType.RAIL_GUN)
         {
             obj.transform.localPosition = new Vector3(-0.3f,-0.1f, -4.1f);
-            obj.GetComponent<RailGunController>().roman_bar = RomanGaugeBar;
         }
     }
     void gunTransform()

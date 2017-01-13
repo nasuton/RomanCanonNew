@@ -16,7 +16,6 @@ public class SoundMakerGameMain : MonoBehaviour {
         Sound.LoadBgm("tilya-zi t", "tilya-zi t");
         Sound.LoadBgm("tilya-zi s", "tilya-zi s");
         //Sound.LoadSe("tilya-zi se", "tilya-zi se");
-
         //Sound.PlayBgm("TitleBgm");
     }
 	

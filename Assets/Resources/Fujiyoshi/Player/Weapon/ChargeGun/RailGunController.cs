@@ -12,8 +12,7 @@ public class RailGunController : MonoBehaviour
     [SerializeField]
     GameObject effect2 = null;
 
-    [SerializeField]
-    GameObject gravity = null;
+    
 
     [SerializeField, Tooltip("BulletSpeed")]
     private float speed = 100.0f;
@@ -21,11 +20,7 @@ public class RailGunController : MonoBehaviour
     [SerializeField, Tooltip("1発撃った後の待機時間")]
     private float waitTimeOfShot = 0.05f;
 
-    public GameObject roman_bar;
-
-    GameObject obj_ins;
-
-    float move_Vec = 10;
+   
 
     private bool isCharge = false;
 
@@ -97,16 +92,7 @@ public class RailGunController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && roman_bar.GetComponent<RomanGauge>().roman_mode == true)
-        {
-            obj_ins = (GameObject)Instantiate(gravity, new Vector3(0, 0, 0), Quaternion.identity);
-            obj_ins.transform.forward = this.transform.forward;
-        }
-        if(roman_bar.GetComponent<RomanGauge>().roman_mode == true)
-        {
-            obj_ins.transform.localPosition += this.transform.forward * move_Vec;
-            move_Vec *= 0.9f;
-        }
+        
     }
 
     private void Charge()
