@@ -62,7 +62,6 @@ public class ChargeGauge : MonoBehaviour
     }
     void Start()
     {
-
         Init();
         Rate();
     }

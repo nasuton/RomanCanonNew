@@ -20,11 +20,19 @@ public class WeaponStatusManager : MonoBehaviour {
     {
         public enum BurstType
         {
-            rocket = 0,
-            normal = 1,
-            burst = 2,
-            tactical = 3,
-            bb = 0
+            rocket = 1,
+            normal = 3,
+            burst = 0,
+            tactical = 2,
+            mailbomb = 0,
+            silverking = 1,
+            gravity = 2,
+            limitter = 3,
+            charge1 = 0,
+            charge2 = 1,
+            charge3 = 2,
+            charge4 = 3,
+
         }
         public BurstType brust;
         public int num;
